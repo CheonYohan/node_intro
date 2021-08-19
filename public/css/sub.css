@@ -1,0 +1,41 @@
+.calendar-container{ box-shadow: 1px 1px 15px 1px rgb(255, 255, 255); margin: auto; padding: 25px; max-width: 800px; height: calc(90vh - 40px);}
+.calendar-container *{user-drag: none; -webkit-user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+.calendar-container > header{ display: flex; justify-content: space-between;}
+.day-header-container{ display: flex; padding-bottom: 5px; border-bottom: 1px solid #fff; margin-bottom: 30px; margin-top: 20px;}
+.day-header-container > .day-header{ flex: 0.14285; text-align: center;}
+.day-container{ display: flex; flex-wrap: wrap; box-shadow: 0px 0px 2px 2px #fff;}
+.day-container > .day{ flex: 14.285%; text-align: center;}
+.calendar-header > h1{ margin: 0;}
+.day{ height: 4rem; background: #222222;; color: #636363; padding: 7px; box-shadow: 1px 1px 1px 1px #fff; display: flex; justify-content: flex-end; align-items: flex-start;}
+.this-month.day{ color: #fff; background: #000; cursor: pointer;}
+.this-month.day.active{ background: #2c0303;}
+.calendar-button-container .calendar-button{ background: #000; border-radius: 1rem; padding:5px; width: 5rem; border: 1px solid #fff; cursor: pointer;}
+.calendar-button-container .calendar-button:last-child{margin-left: 10px;}
+.calendar-container .today{ position: relative; border: 1px solid #fff; border-radius: 100%;}
+#main-background{ position: absolute; z-index: -1; top:0; left:0; }
+
+
+/* login css */
+.login-container{ display:flex;  height: calc(100% - 40px); flex-direction: column; justify-content: center; position: absolute; transform: translate(-50%); left: 50%; top: 100%; transition: 1s;}
+.login-container .login-header{ flex: 1;}
+.login-container .login-body{ background: rgba(85, 54, 54, 0.75); padding: 5rem; flex: 1; justify-content: center; align-items: center; display: flex; flex-direction: column;}
+.login-body .login-textBox{ background: linear-gradient(to right,#3d853d,#679667); color: #fff; width: 100%; border: none; margin: 0.5rem; padding: 0.5rem; border-radius: 1rem; font-size: 1.5rem;}
+.login-body .login-textBox::placeholder{ color: #d0ecd5;}
+.login-body .login-btn{ width: 100%; padding: 1.5rem 1rem; cursor: pointer; background: #56884c; border: none; margin-top: 1rem; border-radius: .25rem; font-size: 1.75rem;}
+.login-container .login-footer{ flex: 1;}
+
+.login-text{ color: #000;}
+
+@media(max-width:1200px){
+    .today{ padding: 0 3px;}
+    .calendar-container{ font-size: 1rem;}
+    .login-container .login-body{ padding: 2rem; }
+}
+
+@media(max-width:768px){
+    .today{ padding: 0;}
+    .calendar-container, .calendar-button{ font-size: 0.75rem; padding: 0.25rem;}
+    .day{ height: 2.5rem;}
+    .login-container .login-body{ padding: 1rem;}
+    .login-container{ width: 80%;}
+}

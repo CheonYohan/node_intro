@@ -1,7 +1,28 @@
 <%- include('header.html') -%>
+<script src="/js/main/calendar.js"></script>
+<main>
+    <section class="login-container">
+        <div class="login-header"></div>
+        <div class="login-body">
+            <input type="text" class="login-textBox" name="userId" id="userId" placeholder="USER ID">
+            <input type="password" class="login-textBox" name="password" id="password" placeholder="PASSWORD">
 
-<h1>Hello World</h1>
+            <button type="button" class="login-btn" onclick="javascript:loginHandler();">LOGIN</button>
+        </div>
+        <div class="login-footer">
 
-- hans's personal server -
+        </div>
+    </section>
+    <section id="calendar_target"></section>
+
+    <div id="alert">
+        
+    </div>
+</main>
+<script type="module" src="/js/main/background.js"></script>
+<script src="/js/main/main.js"></script>
+<script>
+    const calendar = new Calendar(null,"#calendar_target",null,'<%=id%>','<%=userName%>');
+</script>
 
 <%- include('footer.html') -%>

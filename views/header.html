@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title><%= title %></title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/basic.css">
+  <link rel="stylesheet" href="css/sub.css">
 </head>
-<body>
-header
+<body class="loading">
+  <header>
+    <div>Han's Working plan</div>
+    <div>
+      <% if(user !== undefined){ %>
+        <button class="login-btn" data-power="off" onclick="jasvascript:window.location.href='/api/logout';">LOGOUT</button>
+      <% }else{ %>
+          <button class="login-btn" data-power="off" onclick="jasvascript:loginBoxHandler(this);">LOGIN</button>
+      <% } %>
+    </div>
+  </header>
+<script>
+  const mainBackground = new Image();
+  mainBackground.addEventListener('load',(e)=>{
+    document.querySelector('body > main').style.background=`url('${mainBackground.src}')`;
+  });
+  
+  window.addEventListener('load',e=>{
+    //mainBackground.src = '/images/main/star-background.jpeg';
+    document.body.classList.remove('loading');
+  });
+
+  function loginBoxHandler(e){
+    var e = e ?? document.querySelector('.login-btn');
+    const power = e.dataset.power ?? 'off';
+    if(power === 'off'){
+      document.querySelector('.login-container').style.top='0%';
+      e.dataset.power='on';
+    }else{
+      document.querySelector('.login-container').style.top='100%';
+      e.dataset.power='off';
+    }
+  }
+</script>
