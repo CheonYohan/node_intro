@@ -10,7 +10,6 @@ var http = require('http');
 var app = module.exports = express();
 var FileStore = require('session-file-store')(session);//session 파일 스토어를 위해 사용
 
-출처: https://gakari.tistory.com/entry/Nodejs-생활코딩-정리-–-세션session을-파일에-저장하기?category=536536 [가카리의 공부방]
 app.use(express.urlencoded({extended:true})); 
 app.use(express.json());
 
